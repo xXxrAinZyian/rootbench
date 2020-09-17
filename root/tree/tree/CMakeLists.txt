@@ -32,4 +32,10 @@ if(ROOT_root7_FOUND AND rootbench-datafiles)
     SETUP "${ROOT_hadd_CMD} -f404 ${RB_DATASETDIR}/h1dst-lz4.root ${RB_DATASETDIR}/h1dst-lzma.root"
     SETUP "${ROOT_hadd_CMD} -f506 ${RB_DATASETDIR}/h1dst-zstd.root ${RB_DATASETDIR}/h1dst-lzma.root"
     SETUP "${ROOT_hadd_CMD} -f0 ${RB_DATASETDIR}/h1dst-none.root ${RB_DATASETDIR}/h1dst-lzma.root")
+
+  RB_ADD_GBENCHMARK(RNTupleLHCBBenchmarks
+   RNTupleLHCBBenchmarks.cxx
+   LABEL short
+   LIBRARIES Core Hist MathCore RIO Tree ROOTNTuple
+   DOWNLOAD_DATAFILES B2HHH~none.ntuple)
 endif()
